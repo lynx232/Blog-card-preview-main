@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* COLORS */
+    --BG-COLOR: hsl(47, 88%, 63%);
+    --CARD-COLOR: hsl(0, 0%, 100%);
+    --HEADER-COLOR: hsl(0, 0%, 7%);
+    --PARAGRAPH-COLOR: hsl(0, 0%, 42%);
+}
+
+body {
+    background-color: var(--BG-COLOR);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Figtree', sans-serif;   
+}
+
+.card {
+    background-color: var(--CARD-COLOR);
+    border-radius: 15px;
+    border: 1px solid var(--HEADER-COLOR);
+    box-shadow: 12px 12px 0 1px var(--HEADER-COLOR);
+    padding: 1.5em;
+    margin-bottom: 2em;
+    max-width: 375px;
+    width: 100%;
+}
+
+.card__image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.content {
+    position: relative;
+}
+
+.content__subsection {
+    background-color: var(--BG-COLOR);
+    border-radius: 5px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-bottom: 1em;
+    font-size: 0.7em;
+    font-weight: lighter;
+    
+}
+
+.content__date {
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+.content__title {
+    margin-bottom: 1em;
+    transition: 0.3s ease-in-out;
+}
+
+.content__title:hover {
+    color: var(--BG-COLOR);
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.content__text {
+    color: var(--PARAGRAPH-COLOR);
+    margin-bottom: 2em;
+}
+
+.card__author {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.card__author__avatar {
+    width: 2.5em;
+    border-radius: 50%;
+}
+
+.card__author__name {
+    font-size: 1em; 
+    color: var(--PARAGRAPH-COLOR);
+}
+
+@media (max-width: 600px) {
+    .card {
+        max-width: calc(100% - 30px); 
+        padding: 1.5em;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        max-width: calc(100%-1em);
+    }
+
+    .content__subsection {
+        font-size: 0.6em;
+    }
+    
+    .content__title {
+        font-size: 1.1em;
+    }
+
+    .content__text {
+        font-size: 0.85em;
+    }
+
+    .card__author__avatar {
+        width: 35px;
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        max-width: 450px; 
+    }
+
+    .content__title {
+        font-size: 1.5em; 
+    }
+
+    .content__text {
+        font-size: 1em;
+    }
+
+    .card__author__avatar {
+        width: 50px;
+    }
+}
